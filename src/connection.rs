@@ -13,7 +13,7 @@ use openssl::asn1::Asn1Time;
 use openssl::hash::MessageDigest;
 use openssl::pkey::{PKey, Private};
 use openssl::rsa::Rsa;
-use openssl::ssl::{SslAcceptor, SslAcceptorBuilder, SslMethod};
+use openssl::ssl::{SslAcceptor, SslAcceptorBuilder, SslMethod, SslVerifyMode};
 use openssl::x509::X509;
 use rtp::rfc3550::{
     RtcpCompoundPacket, RtcpPacket, RtcpPacketReader, RtcpPacketWriter, RtpFixedHeader, RtpPacket,
@@ -237,6 +237,7 @@ impl Connection {
         let mut acceptor = SslAcceptor::mozilla_intermediate(SslMethod::dtls()).unwrap();
         acceptor.set_certificate(&self.dtls_cert).unwrap();
         acceptor.set_private_key(&self.dtls_key).unwrap();
+        // acceptor.set_verify(SslVerifyMode::NONE);
         // FIXME: verify remote fingerprint
         self.dtls_srtp_future = Some(DtlsSrtp::handshake(component, acceptor).boxed());
 

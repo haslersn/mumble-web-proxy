@@ -19,7 +19,7 @@ mumble-protocol = { version = "0.4", features = ["webrtc-extensions"] }
 tokio-tungstenite = "0.13"
 http = "0.2"
 tungstenite = "0.12"
-rtp = { git = "https://github.com/johni0702/rtp", rev = "6c0223d", features = ["rfc5764-openssl"] }
-libnice = "0.3"
+rtp = { git = "https://github.com/haslersn/rtp", rev = "ecb7f537ec4124af0c09728422e1074a8e7fa7f4", features = ["rfc5764-openssl"] }
+libnice = { git = "https://github.com/haslersn/rust-libnice", rev = "3a42b5a66a177537573772f1984deba6c7e8f6be" }
 webrtc-sdp = "0.3"
 openssl = "0.10"

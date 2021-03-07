@@ -683,8 +683,7 @@ dependencies = [
 [[package]]
 name = "libnice"
 version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d11cf9ef4788e01947486e02cc4e9462462cbeb79bed0cfc0d007d0ba3f76955"
+source = "git+https://github.com/haslersn/rust-libnice?rev=3a42b5a66a177537573772f1984deba6c7e8f6be#3a42b5a66a177537573772f1984deba6c7e8f6be"
 dependencies = [
  "futures 0.3.4",
  "glib",
@@ -1309,7 +1308,7 @@ dependencies = [
 [[package]]
 name = "rtp"
 version = "0.1.0"
-source = "git+https://github.com/johni0702/rtp?rev=6c0223d#6c0223d8a43ea5251574c541e72461b5d18a3906"
+source = "git+https://github.com/haslersn/rtp?rev=ecb7f537ec4124af0c09728422e1074a8e7fa7f4#ecb7f537ec4124af0c09728422e1074a8e7fa7f4"
 dependencies = [
  "aes-ctr",
  "async-trait",
